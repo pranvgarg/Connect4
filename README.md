@@ -1,6 +1,7 @@
 # Playing Connect 4 with AI: A Deep Dive into Developing the Bot
 
 ## Welcome to Our Connect 4 AI Game!
+![connect4](connect4.jpeg)
 
 Connect 4 AI is a computer-powered opponent that leverages advanced algorithms to challenge human players. Far more than a simple game of dropping pieces into a grid, it is a battle of tactics, foresight, and strategy. Every move influences your opponent’s subsequent choices, requiring not only immediate tactical responses but also long-term planning.
 
