@@ -468,9 +468,9 @@ sudo docker compose down
 ```
 
 Debugging Best Practices
-	•	Ensure correct file permissions for project files before copying them into the container.
-	•	Adjust TensorFlow GPU settings in docker-compose.yml for optimized performance.
-	•	Regularly clean up unused images and containers:
+- Ensure correct file permissions for project files before copying them into the container.
+- Adjust TensorFlow GPU settings in docker-compose.yml for optimized performance.
+- Regularly clean up unused images and containers:
 ```sh
 docker system prune -a
 ```
@@ -479,17 +479,17 @@ docker system prune -a
 # Challenges Encountered
 
 We encountered multiple challenges during deployment:
-	•	Understanding Image vs. Container Workflows: Differentiating between image creation and container execution required fine-tuning.
-	•	Handling Large TensorFlow Dependencies: The first deployment failed due to excessive memory usage when loading deep learning models.
-	•	File Transfer Issues: Using FileZilla to transfer project files to AWS ensured complete dependency management.
+- Understanding Image vs. Container Workflows: Differentiating between image creation and container execution required fine-tuning.
+- Handling Large TensorFlow Dependencies: The first deployment failed due to excessive memory usage when loading deep learning models.
+- File Transfer Issues: Using FileZilla to transfer project files to AWS ensured complete dependency management.
 
 ---
 
 # Future Improvements
 
 To enhance performance, we propose:
-	1.	CI/CD Pipeline Automation: Automating deployments via GitHub Actions or Jenkins.
-	2.	Using Kubernetes: For scalable container orchestration and efficient GPU allocation.
-	3.	Optimizing AI Response Time: Currently, the backend processes the board state before returning the next move. Future improvements will focus on reducing response delay.
+1.	CI/CD Pipeline Automation: Automating deployments via GitHub Actions or Jenkins.
+2.	Using Kubernetes: For scalable container orchestration and efficient GPU allocation.
+3.	Optimizing AI Response Time: Currently, the backend processes the board state before returning the next move. Future improvements will focus on reducing response delay.
 
 
