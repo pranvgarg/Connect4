@@ -1,0 +1,24 @@
+# version: "3"                               # < changed
+services:
+  anvil-uplink:
+    container_name: anvil-uplink
+    build: 
+      # build the image from the Dockerfile in the current directory
+      context: .
+    # if something fails or the server is restarted, the container will restart
+    restart: always 
+    image: anvil-uplink
+    volumes:
+      # - /home:/FOLDERNAME
+      # Mount the project directory for persistence
+      - ./:/connect4_app                   # < changed
+    working_dir: /connect4_app            # < changed
+    # command: ["python", "play_game.py"]   # < changed
+    environment:
+    # - ANVIL_APP_KEY=your-correct-anvil-uplink-key  # Provide Anvil Uplink key as an environment variable
+      - CUDA_VISIBLE_DEVICES=-1
+      - TF_CPP_MIN_LOG_LEVEL=2
+      - TF_FORCE_GPU_ALLOW_GROWTH=false
+      - TF_ENABLE_ONEDNN_OPTS=0
+      - XLA_FLAGS=--xla_gpu_cuda_data_dir= 
+      
