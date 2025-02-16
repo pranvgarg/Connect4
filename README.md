@@ -9,6 +9,7 @@ Our system systematically analyzes board states to identify winning patterns, bl
 
 This project details our approach—from generating training data using Monte Carlo Tree Search (MCTS) to training both Convolutional Neural Network (CNN) and Transformer models, and finally deploying the solution using Docker on AWS Lightsail.
 
+***This project doesn't contain data folder which have generated data from ```generate_data.py``` as the the generated boards and moves were way to large and to run this code please make directory named "data" and store the generated data inside it. Thank You!***
 
 ## Board Update & Move Functions
 
