@@ -474,16 +474,18 @@ Debugging Best Practices
 ```sh
 docker system prune -a
 ```
+---
 
-
-Challenges Encountered
+# Challenges Encountered
 
 We encountered multiple challenges during deployment:
 	•	Understanding Image vs. Container Workflows: Differentiating between image creation and container execution required fine-tuning.
 	•	Handling Large TensorFlow Dependencies: The first deployment failed due to excessive memory usage when loading deep learning models.
 	•	File Transfer Issues: Using FileZilla to transfer project files to AWS ensured complete dependency management.
 
-Future Improvements
+---
+
+# Future Improvements
 
 To enhance performance, we propose:
 	1.	CI/CD Pipeline Automation: Automating deployments via GitHub Actions or Jenkins.
