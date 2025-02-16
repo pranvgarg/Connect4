@@ -298,6 +298,8 @@ x = tf.keras.layers.Dropout(0.5)(x)
 outputs = tf.keras.layers.Dense(num_classes, activation='softmax')(x)
 
 ```
+<img width="693" alt="image" src="https://github.com/user-attachments/assets/8ce3cd00-aaad-4c42-b8b1-12fd1847c5b7" />
+![resnet_model h5](https://github.com/user-attachments/assets/8999785a-a880-4d7e-8262-2a4a39e6448d)
 
 ---
 
@@ -391,6 +393,8 @@ def create_transformer_model(input_shape, embed_dim=128, num_heads=8, ff_dim=256
     model = Model(inputs=inputs, outputs=outputs)
     return model
 ```
+<img width="678" alt="image" src="https://github.com/user-attachments/assets/85af50c6-9b38-4fdd-9180-c703ff3b4fc6" />
+![transformer_model h5](https://github.com/user-attachments/assets/079b268a-b637-4062-874d-a0a54ce21cc9)
 
 ---
 
@@ -438,6 +442,7 @@ The deployment process includes:
 The **Dockerfile** defines the containerized environment, ensuring **all dependencies** (Python, TensorFlow, Django, Anvil Uplink) are installed and managed.
 
 The **Docker Compose** file simplifies the process by defining multiple services, including automatic restarts.
+<img width="707" alt="image" src="https://github.com/user-attachments/assets/1f04917b-7487-4975-8b60-f771deb401b8" />
 
 ---
 
@@ -465,9 +470,9 @@ Debugging Best Practices
 	•	Ensure correct file permissions for project files before copying them into the container.
 	•	Adjust TensorFlow GPU settings in docker-compose.yml for optimized performance.
 	•	Regularly clean up unused images and containers:
-
+```sh
 docker system prune -a
-
+```
 
 
 Challenges Encountered
