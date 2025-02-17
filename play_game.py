@@ -357,7 +357,8 @@ def announce_winner(winner):
     Displays the winner of the game.
     """
     if winner == 'tie':
-        print("The game is a tie!")
+        return {"error": "The game is a tie!"}
+        # print("The game is a tie!")
     else:
         print(f"The Winner is: {'AI' if winner[2] == 'p' else 'Human'}!")
 
