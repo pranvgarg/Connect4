@@ -442,7 +442,7 @@ The deployment process includes:
 3. **Building & launching the Docker container** to host the backend AI service.
 
 The **Dockerfile** defines the containerized environment, ensuring **all dependencies** (Python, TensorFlow, Django, Anvil Uplink) are installed and managed.
-
+This section outlines the process of containerizing the Connect 4 game using Docker and deploying it on AWS Lightsail. The implementation, which incorporates Django, TensorFlow, and Anvil Uplink, was containerized through a carefully configured Dockerfile. The Dockerfile copies project files, sets the working directory, and manages dependencies within the container, while Docker Compose streamlines the management of multiple services, including restarting containers automatically. We encountered challenges, such as understanding image vs. container workflows, handling large dependencies like TensorFlow models, and ensuring proper file transfer to AWS using FileZilla.
 The **Docker Compose** file simplifies the process by defining multiple services, including automatic restarts.
 <img width="707" alt="image" src="https://github.com/user-attachments/assets/1f04917b-7487-4975-8b60-f771deb401b8" />
 
@@ -468,16 +468,26 @@ sudo docker compose ps
 sudo docker compose down
 ```
 
-Debugging Best Practices
-- Ensure correct file permissions for project files before copying them into the container.
-- Adjust TensorFlow GPU settings in docker-compose.yml for optimized performance.
-- Regularly clean up unused images and containers:
+**Debugging best** practices include verifying file permissions, fine-tuning TensorFlow GPU settings, and routinely removing unused images and containers to maintain an efficient environment.
+
+**Future enhancements** focus on automating deployments through CI/CD pipelines, leveraging Kubernetes for scalable container orchestration, and optimizing GPU utilization to improve performance within the Docker environment.
+
+The game experiences some lag due to the backend server processing board images, handling move logic, and returning responses to the frontend (Code for reference provided below). This delay impacts responsiveness, and further optimizations can be implemented as a future scope to improve the user experience by accelerating these processes.
 ```sh
 docker system prune -a
 ```
 ---
+# **AI Move Analysis: Wins & Blocks**
+## Our models performed exceptionally well in recognizing obvious wins and blocking immediate threats. Some examples of boards where the AI excelled included:
 
-# Challenges Encountered
+- **Direct wins** – The AI instantly played in the winning column when a four-in-a-row opportunity was available.
+- **Immediate blocks** – When the opponent was one move away from winning, the model correctly placed a piece to prevent a loss.
+- **Tactical setups** – The AI identified double trap strategies, in which it set up two different winning moves simultaneously. This forced the opponent into a losing position, as they could only block one threat while the AI capitalized on the other.
+
+![alt text](image.png)
+
+---
+# **Challenges Encountered**
 
 We encountered multiple challenges during deployment:
 - Understanding Image vs. Container Workflows: Differentiating between image creation and container execution required fine-tuning.
@@ -486,7 +496,7 @@ We encountered multiple challenges during deployment:
 
 ---
 
-# Future Improvements
+# **Future Improvements**
 
 To enhance performance, we propose:
 1.	CI/CD Pipeline Automation: Automating deployments via GitHub Actions or Jenkins.
