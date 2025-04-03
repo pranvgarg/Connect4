@@ -11,6 +11,13 @@ This project details our approach—from generating training data using Monte Ca
 
 ***This project doesn't contain data folder which have generated data from ```generate_data.py``` as the the generated boards and moves were way to large and to run this code please make directory named "data" and store the generated data inside it. Thank You!***
 
+## Demo Walkthrough
+
+
+https://github.com/user-attachments/assets/fd9c4b18-8c47-42e7-84d6-e5393b8393a0
+
+
+
 ## Board Update & Move Functions
 
 ### `update_board(board_temp, color, column)`
